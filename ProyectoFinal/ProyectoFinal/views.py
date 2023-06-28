@@ -388,15 +388,15 @@ usuarios = '''
 {
     "usuarios": [
         {
-            "mail": "peraltamartinezequiel@gmail.com",
+            "usuario": "Coco814151",
             "contraseña": "Ezequiel151plataforma"
         },
         {
-            "mail": "peraltahector2004@yahoo.com.ar",
+            "usuario": "negrito55fotos",
             "contraseña": "manchitas"
         },
         {
-            "mail": "mymartin@intramed.net",
+            "usuario": "mymartin",
             "contraseña": "jvk967"
         }
     ]
@@ -404,7 +404,7 @@ usuarios = '''
 '''
 @app.route('/')
 def index():
-    usuario = request.args.get('mail', usuarios)
+    usuario = request.args.get('usuario', usuarios)
     contraseña = request.args.get('contraseña', usuarios)
 @app.route('/usuarios', methods=['GET', 'POST'])
 def index():
