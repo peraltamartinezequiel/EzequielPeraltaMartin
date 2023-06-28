@@ -407,7 +407,7 @@ def index():
     usuario = request.args.get('usuario', usuarios)
     contraseña = request.args.get('contraseña', usuarios)
 @app.route('/usuarios', methods=['GET', 'POST'])
-def index():
+def usuarios():
     if request.method == 'POST':
         usuario = request.form['usuario']
         contraseña = request.form['contraseña']
