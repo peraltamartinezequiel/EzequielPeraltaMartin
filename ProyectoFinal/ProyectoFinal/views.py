@@ -384,8 +384,29 @@ ABM = '''
     ]
 }
 '''
+usuarios = '''
+{
+    "usuarios": [
+        {
+            "mail": "peraltamartinezequiel@gmail.com",
+            "contraseña": "Ezequiel151plataforma"
+        },
+        {
+            "mail": "peraltahector2004@yahoo.com.ar",
+            "contraseña": "manchitas"
+        },
+        {
+            "mail": "mymartin@intramed.net",
+            "contraseña": "jvk967"
+        }
+    ]
+}
+'''
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+def index():
+    usuario = request.args.get('mail', usuarios)
+    contraseña = request.args.get('contraseña', usuarios)
+@app.route('/usuarios', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         usuario = request.form['usuario']
