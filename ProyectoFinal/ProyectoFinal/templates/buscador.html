@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<nav class="barra_de_navegacion">
+    <div class="contenedor_barra">
+        <h2> COCO+ </h2>
+        <form action="/buscador" method="post">
+            <div class="flex">
+                <input type="search" class="buscador" name="buscador" />
+                <button class="boton" type="button"> BUSCAR </button>
+            </div>
+        </form>
+    </div>
+</nav>
+<div id="peliculas">
+    <p> {{ i ['id'] }} </p>
+    <h3> {{ i ['título'] }} </h3>
+    <p> {{ i ['director'] }} </p>
+    <p> {{ i ['año'] }} </p>
+    <p> {{ i ['género'] }} </p>
+    <p> {{ i ['sinopsis'] }} </p>
+    <p> {{ i ['link'] }} </p>
+    <p> {{ i ['comentario'] }} </p>
+</div>
+{% endblock %}

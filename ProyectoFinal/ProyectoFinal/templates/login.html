@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %} Iniciar sesión {% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    <label for="usuario"> Usuario: </label>
+    <input type="text" id="usuario" name="usuario" required />
+    <label for="contraseña"> Contraseña: </label>
+    <input type="password" id="contraseña" name="contraseña" required />
+    <input type="submit" id="send-signin" name="signin" value="ingresar" />
+</form>
+
+{% endblock %}

@@ -41,6 +41,8 @@
     <Folder Include="ProyectoFinal\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ProyectoFinal\templates\peliculas.html" />
+    <Content Include="ProyectoFinal\templates\buscador.html" />
     <Content Include="requirements.txt" />
     <Content Include="ProyectoFinal\static\content\bootstrap.css" />
     <Content Include="ProyectoFinal\static\content\bootstrap.min.css" />
@@ -64,10 +66,10 @@
     <Content Include="ProyectoFinal\static\scripts\respond.js" />
     <Content Include="ProyectoFinal\static\scripts\respond.min.js" />
     <Content Include="ProyectoFinal\static\scripts\_references.js" />
-    <Content Include="ProyectoFinal\templates\about.html" />
-    <Content Include="ProyectoFinal\templates\contact.html" />
+    <Content Include="ProyectoFinal\templates\404.html" />
+    <Content Include="ProyectoFinal\templates\501.html" />
+    <Content Include="ProyectoFinal\templates\login.html" />
     <Content Include="ProyectoFinal\templates\index.html" />
-    <Content Include="ProyectoFinal\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
