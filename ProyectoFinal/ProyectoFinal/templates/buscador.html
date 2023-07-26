@@ -13,14 +13,18 @@
         </form>
     </div>
 </nav>
-<div id="peliculas">
-    <p> {{ i ['id'] }} </p>
-    <h3> {{ i ['título'] }} </h3>
-    <p> {{ i ['director'] }} </p>
-    <p> {{ i ['año'] }} </p>
-    <p> {{ i ['género'] }} </p>
-    <p> {{ i ['sinopsis'] }} </p>
-    <p> {{ i ['link'] }} </p>
-    <p> {{ i ['comentario'] }} </p>
-</div>
+{% for i in peliculas %}
+<article>
+    <div id="peliculas">
+        <p> {{ i ['id'] }} </p>
+        <h3> {{ i ['título'] }} </h3>
+        <p> {{ i ['director'] }} </p>
+        <p> {{ i ['año'] }} </p>
+        <p> {{ i ['género'] }} </p>
+        <p> {{ i ['sinopsis'] }} </p>
+        <p> {{ i ['link'] }} </p>
+        <p> {{ i ['comentario'] }} </p>
+    </div>
+</article>
+{% endfor %}
 {% endblock %}

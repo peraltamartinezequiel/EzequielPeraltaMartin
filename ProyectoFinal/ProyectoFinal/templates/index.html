@@ -4,61 +4,85 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - My Flask Application</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
 </head>
 <body>
-    <header>
-        {% block content %}
-        <nav class="barra_de_navegacion">
-            <div class="contenedor_barra">
-                <h2> COCO+ </h2>
-                <form action="/buscador" method="post">
-                    <div class="flex">
-                        <input type="search" class="buscador" name="buscador" />
-                        <button class="boton" type="button"> BUSCAR </button>
-                    </div>
-                </form>
-            </div>
-        </nav>
-        <div id="peliculas">
-            <p> {{ i ['id'] }} </p>
-            <h3> {{ i ['título'] }} </h3>
-            <p> {{ i ['director'] }} </p>
-            <p> {{ i ['año'] }} </p>
-            <p> {{ i ['género'] }} </p>
-            <p> {{ i ['sinopsis'] }} </p>
-            <p> {{ i ['link'] }} </p>
-            <p> {{ i ['comentario'] }} </p>
-        </div>
-        {% endblock %}
-        {% block content %}
-        <form action="" method="post">
-            <label for="usuario"> Usuario: </label>
-            <input type="text" id="usuario" name="usuario" required />
-            <label for="contraseña"> Contraseña: </label>
-            <input type="password" id="contraseña" name="contraseña" required />
-            <input type="submit" id="send-signin" name="signin" value="ingresar" />
-        </form>
-        {% endblock %}
-    </header>
-    {% block content %}
     <div id="contenedor">
-        <main>
+        <header>
+            {% block content %}
+            <nav class="barra_de_navegacion">
+                <div class="contenedor_barra">
+                    <h2> COCO+ </h2>
+                    <form action="/buscador" method="post">
+                        <div class="flex">
+                            <input type="search" class="buscador" name="buscador" />
+                            <button class="boton" type="button"> BUSCAR </button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
             {% for i in peliculas %}
-            <div id="pelicula">
-                <p> {{ i ['id'] }} </p>
-                <h3> {{ i ['título'] }} </h3>
-                <p> {{ i ['director'] }} </p>
-                <p> {{ i ['año'] }} </p>
-                <p> {{ i ['género'] }} </p>
-                <p> {{ i ['sinopsis'] }} </p>
-                <p> {{ i ['link'] }} </p>
-                <p> {{ i ['comentario'] }} </p>
-            </div>
+            <article>
+                <div id="peliculas">
+                    <p> {{ i ['id'] }} </p>
+                    <h3> {{ i ['título'] }} </h3>
+                    <p> {{ i ['director'] }} </p>
+                    <p> {{ i ['año'] }} </p>
+                    <p> {{ i ['género'] }} </p>
+                    <p> {{ i ['sinopsis'] }} </p>
+                    <p> {{ i ['link'] }} </p>
+                    <p> {{ i ['comentario'] }} </p>
+                </div>
+            </article>
             {% endfor %}
+            {% endblock %}
+            {% block content %}
+            <form action="" method="post">
+                <label for="usuario"> Usuario: </label>
+                <input type="text" id="usuario" name="usuario" required />
+                <label for="contraseña"> Contraseña: </label>
+                <input type="password" id="contraseña" name="contraseña" required />
+                <input type="submit" id="send-signin" name="signin" value="ingresar" />
+            </form>
+            {% endblock %}
+        </header>
+        <main>
+            {% block content %}
+            {% for i in peliculas %}
+            <article>
+                <div id="pelicula">
+                    <p> {{ i ['id'] }} </p>
+                    <h3> {{ i ['título'] }} </h3>
+                    <p> {{ i ['director'] }} </p>
+                    <p> {{ i ['año'] }} </p>
+                    <p> {{ i ['género'] }} </p>
+                    <p> {{ i ['sinopsis'] }} </p>
+                    <p> {{ i ['link'] }} </p>
+                    <p> {{ i ['comentario'] }} </p>
+                </div>
+            </article>
+            {% endfor %}
+            {% endblock %}
+            <div id="botones_pagina">
+                {% if pagina_recurrente > 1 %}
+                <span class="material-simbols-outlined" id="anterior">
+                    keyboard_double_arrow_left
+                </span>
+                <a href="?num_pagina{{ pagina_recurrente - 1 }}" class="boton_pag"> Anterior </a>
+                {% endif %}
+                {% if pagina_recurrente < total_paginas %}
+                <span class="material-simbols-outlined" id="siguiente">
+                    keyboard_double_arrow_right
+                </span>
+                <a href="?num_pagina{{ pagina_recurrente + 1 }}" class="boton_pag"> siguiente </a>
+                {% endif %}
+            </div>
         </main>
+        <footer>
+            <p> visitas: {{ visitas }} </p>
+        </footer>
     </div>
-    {% endblock %}
 </body>
 </html>

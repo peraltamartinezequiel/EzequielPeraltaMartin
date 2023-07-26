@@ -3,14 +3,13 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template, request, redirect, url_for, jsonify, session
+from flask import render_template, request, redirect, url_for, jsonify, session, math
 from ProyectoFinal import app
 import json
 
 peliculas = '''
 [
     {
-       "id": 0,
        "título": "La Sirenita",
        "director/ra": "Rob Marshall",
        "año": 2023,
@@ -20,7 +19,6 @@ peliculas = '''
        "comentario": ""
     },
     {
-        "id": 1,
         "título": "Rápidos y Furiosos X",
         "director/ra": "Louis Leterrier",
         "año": 2023,
@@ -30,7 +28,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 2,
         "título": "Guardianes de la Galaxia Vol. 3",
         "director/ra": "James Gunn",
         "año": 2023,
@@ -40,7 +37,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 3,
         "título": "La Extorsión",
         "director/ra": "Martino Zaidelis",
         "año": 2023,
@@ -50,7 +46,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 4,
         "título": "Super Mario Bros",
         "director/ra": "Aaron Horvath, Michael Jenelic",
         "año": 2023,
@@ -60,7 +55,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 5,
         "título": "Spiderman: Across the Spiderverse",
         "director/ra": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
         "año": 2023,
@@ -70,7 +64,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 6,
         "título": "Transformers: El Despertar de las Bestias",
         "director/ra": "Steven Caple Jr.",
         "año": 2023,
@@ -80,7 +73,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 7,
         "título": "The Flash",
         "director/ra": "Andy Muschietti",
         "año": 2023,
@@ -90,7 +82,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 8,
         "título": "Elemental",
         "director/ra": "Peter Sohn",
         "año": 2023,
@@ -100,7 +91,6 @@ peliculas = '''
         "comentario": ""
     },
     {
-        "id": 9,
         "título": "Boogeyman: Tu Miedo Es Real",
         "director/ra": "Rob Savage",
         "año": 2023,
@@ -113,275 +103,161 @@ peliculas = '''
 '''
 directores = '''
 {
-    "directores": [
-        {
-            "id": 10,
-            "La Sirenita": "Rob Marshall"
-        },
-        {
-            "id": 11,
-            "Rápidos y Furiosos X": "Louis Leterrier"
-        },
-        {
-            "id": 12,
-            "Guardianes de la Galaxia Vol. 3": "James Gunn"
-        },
-        {
-            "id": 13,
-            "La Extorsión": "Martino Zaidelis"
-        },
-        {
-            "id": 14,
-            "Super Mario Bros": "Aaron Horvath, Michael Jenelic"
-        },
-        {
-            "id": 15,
-            "Spiderman: Across the Spiderverse": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson"
-        },
-        {
-            "id": 16,
-            "Transformers: El Despertar de las Bestias": "Steven Caple Jr."
-        },
-        {
-            "id": 17,
-            "The Flash": "Andy Muschietti"
-        },
-        {
-            "id": 18,
-            "Elemental": "Peter Sohn"
-        },
-        {
-            "id": 19,
-            "Boogeyman: Tu Miedo Es Real": "Rob Savage"
-        }
-]
+    "La Sirenita": "Rob Marshall",
+    "Rápidos y Furiosos X": "Louis Leterrier",
+    "Guardianes de la Galaxia Vol. 3": "James Gunn",
+    "La Extorsión": "Martino Zaidelis",
+    "Super Mario Bros": "Aaron Horvath, Michael Jenelic",
+    "Spiderman: Across the Spiderverse": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
+    "Transformers: El Despertar de las Bestias": "Steven Caple Jr.",
+    "The Flash": "Andy Muschietti",
+    "Elemental": "Peter Sohn",
+    "Boogeyman: Tu Miedo Es Real": "Rob Savage"
+}
 '''
 generos = '''
-[
-        {
-            "id": 20,
-            "La Sirenita": "aventuras"
-        },
-        {
-            "id": 21,
-            "Rápidos y Furiosos X": "acción"
-        },
-        {
-            "id": 22,
-            "Guardianes de la Galaxia Vol. 3": "ciencia ficción"
-        },
-        {
-            "id": 23,
-            "La Extorsión": "drama"
-        },
-        {
-            "id": 24,
-            "Super Mario Bros": "animación"
-        },
-        {
-            "id": 25,
-            "Spiderman: Across the Spiderverse": "animación"
-        },
-        {
-            "id": 26,
-            "Transformers: El Despertar de las Bestias": "ciencia ficción"
-        },
-        {
-            "id": 27,
-            "The Flash": "ciencia ficción"
-        },
-        {
-            "id": 28,
-            "Elemental": "animación"
-        },
-        {
-            "id": 29,
-            "Boogeyman: Tu Miedo Es Real": "terror"
-        }
-]
+{
+    "La Sirenita": "aventuras",
+    "Rápidos y Furiosos X": "acción",
+    "Guardianes de la Galaxia Vol. 3": "ciencia ficción",
+    "La Extorsión": "drama",
+    "Super Mario Bros": "animación",
+    "Spiderman: Across the Spiderverse": "animación",
+    "Transformers: El Despertar de las Bestias": "ciencia ficción",
+    "The Flash": "ciencia ficción",
+    "Elemental": "animación",
+    "Boogeyman: Tu Miedo Es Real": "terror"
+}
 '''
 direccion = '''
-[
+{
         "Rob Marshall": [
             {
-                "id": 30,
                 "título": "Piratas del Caribe: Navegando por Aguas Misteriosas",
                 "año": 2011
             },
             {
-                "id": 31,
                 "titulo": "En El Bosque",
                 "año": 2014
             },
             {
-                "id": 32,
                 "título": "El Regreso de Mary Popins",
                 "año": 2018
             }
         ],
         "Louis Leterrier": [
             {
-                "id": 40,
                 "título": "El Increible Hulk",
                 "año": 2008
             },
             {
-                "id": 41,
                 "título": "Furia de Titanes",
                 "año": 2010
             }
         ],
         "James Gunn": [
             {
-                "id": 50,
                 "título": "Guardianes de la Galaxia",
                 "año": 2014
             },
             {
-                "id": 51,
                 "título": "Guardianes de la Galaxia Vol. 2",
                 "año": 2017
             },
             {
-                "id": 52,
                 "título": "The Suicide Squad",
                 "año": 2021
             }
         ],
         "Martino Zaidelis": [
             {
-                "id": 60,
                 "título": "Re Loca",
                 "año": 2018
             }
         ],
         "Aaron Horvath": [
             {
-                "id": 70,
                 "título": "Teen Titans Go",
                 "año": 2018
             }
         ],
         "Steven Caple Jr.": [
             {
-                "id": 80,
                 "título": "Creed II",
                 "año": 2018
             }
         ],
         "Andy Muschietti": [
             {
-                "id": 90,
                 "título": "Mama",
                 "año": 2013
             },
             {
-                "id": 91,
                 "título": "IT",
                 "año": 2017
             },
             {
-                "id": 92,
                 "título": "IT Capítulo Dos",
                 "año": 2019
             }
         ],
         "Peter Sohn": [
             {
-                "id": 100,
                 "título": "El Buen Dinosaurio",
                 "año": 2015
             }
         ]  
-]
+}
 '''
 posters = '''
-[
-        {
-            "id": 110,
-            "La Sirenita": "https://www.cinemacenter.com.ar/img_movies/2627_img2.jpg"
-        },
-        {
-            "id": 111,
-            "Rápidos y Furiosos X": "https://www.cinemacenter.com.ar/img_movies/2672_img2.jpg"
-        },
-        {
-            "id": 112,
-            "Guardianes de la Galaxia Vol. 3": "https://www.cinemacenter.com.ar/img_movies/2637_img2.jpg"
-        },
-        {
-            "id": 113,
-            "La Extorsión": "https://www.cinemacenter.com.ar/img_movies/2645_img2.jpg"
-        },
-        {
-            "id": 114,
-            "Super Mario Bros": "https://www.cinemacenter.com.ar/img_movies/2561_img2.jpg"
-        },
-        {
-            "id": 115,
-            "Spiderman: Across the Spiderverse": "https://www.cinemacenter.com.ar/img_movies/2615_img2.jpg"
-        },
-        {
-            "id": 116,
-            "Transformers: El Despertar de las Bestias": "https://www.cinemacenter.com.ar/img_movies/2607_img2.jpg"
-        },
-        {
-            "id": 117,
-            "The Flash": "https://www.cinemacenter.com.ar/img_movies/2646_img2.jpg"
-        },
-        {
-            "id": 118,
-            "Elemental": "https://www.cinemacenter.com.ar/img_movies/2626_img2.jpg"
-        },
-        {
-            "id": 119,
-            "Boogeyman: Tu Miedo Es Real": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg"
-        }
-    ]
+{
+    "La Sirenita": "https://www.cinemacenter.com.ar/img_movies/2627_img2.jpg",
+    "Rápidos y Furiosos X": "https://www.cinemacenter.com.ar/img_movies/2672_img2.jpg",
+    "Guardianes de la Galaxia Vol. 3": "https://www.cinemacenter.com.ar/img_movies/2637_img2.jpg",
+    "La Extorsión": "https://www.cinemacenter.com.ar/img_movies/2645_img2.jpg",
+    "Super Mario Bros": "https://www.cinemacenter.com.ar/img_movies/2561_img2.jpg",
+    "Spiderman: Across the Spiderverse": "https://www.cinemacenter.com.ar/img_movies/2615_img2.jpg",
+    "Transformers: El Despertar de las Bestias": "https://www.cinemacenter.com.ar/img_movies/2607_img2.jpg",
+    "The Flash": "https://www.cinemacenter.com.ar/img_movies/2646_img2.jpg",
+    "Elemental": "https://www.cinemacenter.com.ar/img_movies/2626_img2.jpg",
+    "Boogeyman: Tu Miedo Es Real": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg"
+}
 '''
-ABM = '''
-[
-        {
-            "id": 120;
-            "La Sirenita": "Bajo"
-        },
-        {
-            "id": 121;
-            "Rápidos y Furiosos X": "Modificable"
-        },
-        {
-            "id": 122,
-            "Guardianes de la Galaxia Vol. 3": "Alto"
-        },
-        {
-            "id": 123,
-            "La Extorsion": "Bajo"
-        },
-        {
-            "id": 124,
-            "Super Mario Bros": "Modificable"
-        },
-        {
-            "id": 125,
-            "Spiderman: Across the Spiderverse": "Alto"
-        },
-        {
-            "id": 126,
-            "Transformers: El Despertar de las Bestias": "Modificable"
-        },
-        {
-            "id": 127,
-            "The Flash": "Alto"
-        },
-        {
-            "id": 128,
-            "Elemental": "Bajo"
-        },
-        {
-            "id": 129,
-            "Boogeyman: Tu Miedo Es Real": "Bajo"
-        }
-]
+ABM_peliculas = '''
+{
+    "La Sirenita": "Bajo",
+    "Rápidos y Furiosos X": "Modificable",
+    "Guardianes de la Galaxia Vol. 3": "Alto",
+    "La Extorsion": "Bajo",
+    "Super Mario Bros": "Modificable",
+    "Spiderman: Across the Spiderverse": "Alto",
+    "Transformers: El Despertar de las Bestias": "Modificable",
+    "The Flash": "Alto",
+    "Elemental": "Bajo",
+    "Boogeyman: Tu Miedo Es Real": "Bajo"
+}
+'''
+ABM_directores = '''
+{
+    "Rob Marshall": "Bajo",
+    "Louis Leterrier": "Bajo",
+    "James Gunn": "Alto",
+    "Martino Zaidelis": "Modificable",
+    "Aaron Horvath": "Modificable",
+    "Steven Caple Jr.": "Modificable",
+    "Andy Muschietti": "Alto",
+    "Peter Sohn": "Modificable",
+}
+'''
+ABM_generos = '''
+{
+    "ciencia ficción": "Alto",
+    "acción": "Modificable",
+    "aventuras": "Modificable",
+    "terror": "Modificable",
+    "animación": "Bajo",
+    "drama": "Modificable"
+}
 '''
 usuarios = '''
 [
@@ -399,6 +275,13 @@ usuarios = '''
         }
 ]
 '''
+ABM_usuarios = '''
+{
+    "Coco814151": "Alto",
+    "negrito55fotos": "Alto",
+    "mymartin": "Modificable"
+}
+'''
 def usuario():
     if 'usuario' in session:
         nombre = session['usuario']
@@ -407,8 +290,21 @@ def usuario():
     return nombre
 @app.route('/')
 def index():
-    usuario = request.args.get('usuario', usuarios)
-    contraseña = request.args.get('contraseña', usuarios)
+    contador = 0
+    peliculas2 = peliculas
+    peliculas2 = list(peliculas2)
+    num_pagina = request.args.get('pagina', 1, type=int)
+    por_pagina = 10
+    inicio_indice = (num_pagina - 1) * por_pagina
+    fin_indice = inicio_indice + fin_indice
+    if len(peliculas2) > 1:
+        peliculas2.reverse()
+    peliculas3 = peliculas2[inicio_indice:fin_indice]
+    total_peliculas = len(peliculas)
+    total_paginas = math.ceil(total_peliculas/por_pagina)
+    session['contador'] = session.get('contador', 0) + 1
+    contador = session['contador']
+    return render_template('index.html', nombre = usuario(), peliculas = peliculas3, visitas = contador, total_paginas = total_paginas, pagina_recurrente = num_pagina, display = "Monstrando peliculas {inicio_indice} / {fin_indice} de un total de <strong>({total_paginas})</strong>")
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -438,7 +334,7 @@ def buscador():
         coco_plus = request.method(titulo1)
         data = jsonify(coco_plus)
         print(data)
-        return render_template('buscador.html', datos = data['datos'])
+        return render_template('buscador.html', i = data['i'])
     else:
         return render_template('buscador.html')
 @app.route('/directores')
@@ -453,9 +349,18 @@ def direccion():
 @app.route('/posters')
 def posters():
     return jsonify(posters)
-@app.route('/ABM')
-def ABM():
-    return jsonify(ABM)
+@app.route('/ABM_peliculas')
+def ABM_peliculas():
+    return jsonify(ABM_peliculas)
+@app.route('/ABM_directores')
+def ABM_directores():
+    return jsonify(ABM_directores)
+@app.route('/ABM_generos')
+def ABM_generos():
+    return jsonify(ABM_generos)
+@app.route('/ABM_pusuarios')
+def ABM_peliculas():
+    return jsonify(ABM_usuarios)
 @app.route('/logout')
 def logout():
     session.pop('usuario', None)
