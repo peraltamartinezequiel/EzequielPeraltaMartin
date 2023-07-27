@@ -4,6 +4,8 @@
 
 {% for i in peliculas %}
 
+{% if i['director'] == director %}
+
 <article>
     <div id="peliculas">
         <h3> {{ i ['título'] }} </h3>

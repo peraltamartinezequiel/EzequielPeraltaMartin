@@ -43,6 +43,14 @@
   <ItemGroup>
     <Content Include="ProyectoFinal\templates\peliculas.html" />
     <Content Include="ProyectoFinal\templates\buscador.html" />
+    <Content Include="ProyectoFinal\templates\agregacion.html" />
+    <Content Include="ProyectoFinal\templates\edicion.html" />
+    <Content Include="ProyectoFinal\templates\eliminacion.html" />
+    <Content Include="ProyectoFinal\templates\directores.html" />
+    <Content Include="ProyectoFinal\templates\generos.html" />
+    <Content Include="ProyectoFinal\templates\pelis_direccion.html" />
+    <Content Include="ProyectoFinal\templates\modificacion_director.html" />
+    <Content Include="ProyectoFinal\templates\modificacion_genero.html" />
     <Content Include="requirements.txt" />
     <Content Include="ProyectoFinal\static\content\bootstrap.css" />
     <Content Include="ProyectoFinal\static\content\bootstrap.min.css" />

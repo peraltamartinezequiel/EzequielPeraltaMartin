@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<form method="post", action="/agregacion">
+    <div id="id_agregacion">
+        <h3 id="agregacion"> AGREGAR </h3>
+        <div id="agregacion">
+            <label for="titulo"> título: </label>
+            <input type="text" id="titulo" name="titulo" required />
+        </div>
+        <div id="agregacion">
+            <label for="director"> director/ra: </label>
+            <input type="text" id="director" name="director" required />
+        </div>
+        <div id="agregacion">
+            <label for="año"> año: </label>
+            <input type="number" id="año" name="año" required />
+        </div>
+        <div id="agregacion">
+            <label for="genero"> género: </label>
+            <input type="text" id="genero" name="genero" required />
+        </div>
+        <div id="agregacion">
+            <label for="sinopsis"> sinopsis: </label>
+            <input type="text" id="sinopsis" name="sinopsis" required />
+        </div>
+        <div id="agregacion">
+            <label for="link"> link: </label>
+            <input type="text" id="link" name="link" required />
+        </div>
+        <div id="agregacion">
+            <label for="comentario"> comentario: </label>
+            <input type="text" id="comentario" name="comentario" required />
+        </div>
+        <div id="agregacion">
+            <label for="puntacion"> puntuación: </label>
+            <input type="text" id="puntuacion" name="puntuacion" required />
+        </div>
+        <div id="agregacion">
+            <button type="submit"> ENVIAR </button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

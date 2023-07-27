@@ -16,7 +16,8 @@ peliculas = '''
        "género": "aventuras",
        "sinopsis": "LA SIRENITA, la querida historia de Ariel, una sirena joven y apasionada con ansias de aventuras, está protagonizada por la cantante y actriz Halle Bailey (CRECIDO) como Ariel; el ganador del premio Tony® Daveed Diggs (Hamilton, El expreso del miedo) como la voz de Sebastián; Jacob Tremblay (LUCA, La habitación) como la voz de Flounder; Awkwafina (RAYA Y EL ÚLTIMO DRAGÓN) como la voz de Scuttle; Jonah Hauer-King (A Dog's Way Home) como el Príncipe Eric; Art Malik (HOMELAND) como Sir Grimsby; Noma Dumezweni (EL REGRESO DE MARY POPPINS) como la Reina Selina; con el ganador del Oscar® Javier Bardem (Sin lugar para los débiles, Being the Ricardos) como el Rey Tritón; y la dos veces nominada al Oscar® Melissa McCarthy (¿PODRÁS PERDONARME? , Damas en guerra) como Úrsula. Ariel, la más joven de las hijas del rey Tritón y la más rebelde, sueña con conocer el mundo más allá del mar y, mientras visita la superficie, se enamora del distinguido príncipe Eric. Aunque las sirenas tienen prohibido relacionarse con los humanos, Ariel debe seguir su corazón. Ella hace un trato con la malvada bruja del mar, Úrsula, que le da la oportunidad de experimentar la vida sobre la tierra, pero que, en última instancia, pone su vida y la corona de su padre en peligro.",
        "link": "https://www.cinemacenter.com.ar/img_movies/2627_img2.jpg",
-       "comentario": ""
+       "comentario": "",
+       "puntuación": 3
     },
     {
         "título": "Rápidos y Furiosos X",
@@ -25,7 +26,8 @@ peliculas = '''
         "género": "acción",
         "sinopsis": "Comienza el final del camino. Rápidos y furiosos X, la décima película de la saga Rápidos y furiosos, es el capítulo final de una de las franquicias más populares y queridas del cine, ahora en su tercera década y continuando con el mismo elenco y personajes que cuando comenzó. A través de varias misiones y contra lo imposible, Dom Toretto (Vin Diesel) y su familia han sido más astutos y más rápidos que todos los enemigos se le han cruzado en su camino. Ahora se enfrentan a su enemigo más letal: una amenaza aterradora que surge de las sombras del pasado que está alimentado de una venganza sangrienta, y está decidido a destruir a su familia y destruir todo, y a cualquier persona, A los que Dom ama. En Rápidos y furiosos: 5in control, de 2011, Dom y su equipo derrotaron al infame líder de la droga brasileña Hernan Reyes y destruyeron su imperio en un puente de Rio de Janeiro. Lo que no sabían era que el hijo de Reyes, Dante (Jason Momoa, de Aquaman) presenció todo y ha pasado 12 años creando un plan para que Dom pague el precio más alto. El plan de Dante llevará a la familia de Dom de Los Ángeles a las catacumbas de Roma, de Brasil a Londres, y de Portugal a la Antártida. Se forjaran nuevos aliados y resurgirán viejos enemigos. Pero todo cambia cuando Dom descubre que su hijo de 8 años (Leo Abelo Perry, Black-ish) es el objetivo final de la venganza de Dante."
         "link": "https://www.cinemacenter.com.ar/img_movies/2672_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 6
     },
     {
         "título": "Guardianes de la Galaxia Vol. 3",
@@ -34,7 +36,8 @@ peliculas = '''
         "género": "ciencia ficción",
         "sinopsis": "GUARDIANES DE LA GALAXIA VOLUMEN 3 contiene varias escenas con luces intermitentes que pueden afectar a los clientes susceptibles a padecer epilepsia fotosensible u otras fotosensibilidades."
         "link": "https://www.cinemacenter.com.ar/img_movies/2637_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 9
     },
     {
         "título": "La Extorsión",
@@ -43,7 +46,8 @@ peliculas = '''
         "género": "drama",
         "sinópsis": "Alejandro es un experimentado piloto aeronáutico. Amante de su profesión, esconde un secreto: una condición médica que implicaría su retiro inmediato. Los Servicios de Inteligencia lo descubren y muy pronto lo extorsionarán exigiéndole que transporte unas misteriosas valijas en la ruta Buenos Aires–Madrid sin hacer preguntas. Alerta por el enigmático cargamento que lleva, Alejandro se sumergirá en un universo de intriga y corrupción que lo pondrá en peligro a él y a los que ama mientras intenta escapar con vida a cualquier precio.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2645_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 4
     },
     {
         "título": "Super Mario Bros",
@@ -52,7 +56,8 @@ peliculas = '''
         "género": "animación",
         "sinópsis": "Dirigida por by Aaron Horvath y Michael Jelenic (colaboradores en Los Jóvenes Titanes en acción, Jóvenes Titanes en acción: la película) de un guion de Matthew Fogel (La gran aventura LEGO 2, Minions: Nace un villano), la película es protagonizada por Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Kevin Michael Richardson como Kamek y Sebastian Maniscalco como Spike.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2561_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 7
     },
     {
         "título": "Spiderman: Across the Spiderverse",
@@ -61,7 +66,8 @@ peliculas = '''
         "género": "animación",
         "sinópsis": "Miles Morales regresa para el siguiente capítulo de la saga Spider-Verse, ganadora de un Oscar®, una aventura épica que transportará al simpático Spider-Man de Brooklyn a tiempo completo a través del Multiverso para unir fuerzas con Gwen Stacy y un nuevo equipo de Spider-People para enfrentarse a un villano más poderoso que cualquier cosa que hayan encontrado.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2615_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 10
     },
     {
         "título": "Transformers: El Despertar de las Bestias",
@@ -70,7 +76,8 @@ peliculas = '''
         "género": "ciencia ficción",
         "sinopsis": "Vuelven la acción y el espectáculo que han cautivado a los cinéfilos de todo el mundo, #Transformers: El despertar de las bestias llevará al público a una aventura alrededor del mundo en los 90 con los Autobots en introducirá a una nueva generación de Transformers, los Maximals, a la batalla existente en la tierra entre Autobots y Decepticons.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2607_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 5
     },
     {
         "título": "The Flash",
@@ -79,7 +86,8 @@ peliculas = '''
         "género": "ciencia ficción",
         "sinopsis": "Los mundos chocan en "Flash" cuando Barry usa sus superpoderes para viajar en el tiempo y cambiar los eventos del pasado. Pero cuando su intento de salvar a su familia altera el futuro sin darse cuenta, Barry queda atrapado en una realidad en la que el general Zod ha regresado, amenazando con la aniquilación, y no hay superhéroes a los que recurrir. Es decir, a menos que Barry pueda sacar a un Batman muy diferente de su retiro y rescatar a un kryptoniano encarcelado... aunque no sea el que está buscando. En última instancia, para salvar el mundo en el que se encuentra y regresar al futuro que conoce, la única esperanza de Barry es escapar de él para salvar su vida. Pero, ¿será suficiente hacer el último sacrificio para reiniciar el universo?",
         "link": "https://www.cinemacenter.com.ar/img_movies/2646_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 6
     },
     {
         "título": "Elemental",
@@ -88,7 +96,8 @@ peliculas = '''
         "género": "animación",
         "sinopsis": "Elemental, de Disney y Pixar, es un nuevo largometraje original ambientado en Elemental City, donde conviven habitantes de fuego, agua, tierra y aire. La protagonista de la historia es Ember, una joven fuerte, ingeniosa y con carácter, cuya amistad con un chico divertido, sensible y tranquilo, llamado Wade, cambia su perspectiva sobre el mundo en el que viven.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2626_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 4
     },
     {
         "título": "Boogeyman: Tu Miedo Es Real",
@@ -97,38 +106,13 @@ peliculas = '''
         "género": "terror",
         "sinopsis": "BOOGEYMAN: TU MIEDO ES REAL es un clásico del cine de terror al estilo de “Poltergeist”, que asusta y muestra un costado más humano en igual medida, dice su director, Rob Savage. Recuerdo vívidamente el terror que sentí al leer el cuento corto de King cuando era niño, y es esta sensación de miedo infantil lo que quería inspirarle a las audiencias de todo el mundo. Esta película se realizó en colaboración con un equipo de creativos increíblemente talentosos y está anclada en las maravillosas y conmovedoras intepretaciones de nuestro extraordinario elenco que me ha asombrado, de verdad. Estamos orgullosos de esta película y estamos ansiosos por darles a todos una razón para temer a la oscuridad nuevamente el 1 de junio.",
         "link": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg",
-        "comentario": ""
+        "comentario": "",
+        "puntuación": 5
     }
 ]
 '''
-directores = '''
-{
-    "La Sirenita": "Rob Marshall",
-    "Rápidos y Furiosos X": "Louis Leterrier",
-    "Guardianes de la Galaxia Vol. 3": "James Gunn",
-    "La Extorsión": "Martino Zaidelis",
-    "Super Mario Bros": "Aaron Horvath, Michael Jenelic",
-    "Spiderman: Across the Spiderverse": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
-    "Transformers: El Despertar de las Bestias": "Steven Caple Jr.",
-    "The Flash": "Andy Muschietti",
-    "Elemental": "Peter Sohn",
-    "Boogeyman: Tu Miedo Es Real": "Rob Savage"
-}
-'''
-generos = '''
-{
-    "La Sirenita": "aventuras",
-    "Rápidos y Furiosos X": "acción",
-    "Guardianes de la Galaxia Vol. 3": "ciencia ficción",
-    "La Extorsión": "drama",
-    "Super Mario Bros": "animación",
-    "Spiderman: Across the Spiderverse": "animación",
-    "Transformers: El Despertar de las Bestias": "ciencia ficción",
-    "The Flash": "ciencia ficción",
-    "Elemental": "animación",
-    "Boogeyman: Tu Miedo Es Real": "terror"
-}
-'''
+directores = '/templates/directores.html'
+generos = '/templates/generos.html'
 direccion = '''
 {
         "Rob Marshall": [
@@ -304,7 +288,7 @@ def index():
     total_paginas = math.ceil(total_peliculas/por_pagina)
     session['contador'] = session.get('contador', 0) + 1
     contador = session['contador']
-    return render_template('index.html', nombre = usuario(), peliculas = peliculas3, visitas = contador, total_paginas = total_paginas, pagina_recurrente = num_pagina, display = "Monstrando peliculas {inicio_indice} / {fin_indice} de un total de <strong>({total_paginas})</strong>")
+    return render_template('index.html', nombre = usuario(), peliculas = peliculas3, visitas = contador, total_paginas = total_paginas, pagina_recurrente = num_pagina)
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -318,13 +302,17 @@ def usuarios():
             return redirect(next)
         return redirect(url_for('/peliculas'))
     return render_template('login.html')
-@app.route('/peliculas', methods=['GET', 'POST'])
+@app.route('/peliculas')
 def peliculas():
-    datos = []
+    return render_template('peliculas.html')
+@app.route('/peliculas/<director>', methods = ['GET', 'POST'])
+def pelis_direccion(director):
+    peliculas = []
     if request.method == 'POST':
         for i in peliculas:
-            datos.append(i)
-    return render_template('peliculas.html')
+            if i['director'] == director:
+                peliculas.append('pelicula')
+    return render_template('pelis_direccion.html', nombre = usuario(), director = director, peliculas = peliculas)
 @app.route('/buscador', methods=['GET', 'POST'])
 def buscador():
     if request.method == 'GET':
@@ -337,6 +325,106 @@ def buscador():
         return render_template('buscador.html', i = data['i'])
     else:
         return render_template('buscador.html')
+@app.route('/agregacion', methods=['GET', 'POST'])
+def agregacion():
+    if request.method == 'GET':
+        return render_template('agregacion.html')
+    if request.method['agregacion']:
+        agregacion = 'S'
+        titulo = request.form['titulo']
+        director = request.form['director']
+        anio = request.form['año']
+        genero = request.form['genero']
+        sinopsis = request.form['sinopsis']
+        link = request.form['link']
+        comentario = request.form['comentario']
+        puntuacion = request.form['puntuacion']
+        return redirect(url_for('agregacion'), titulo = titulo, director = director, anio = anio, genero = genero, sinopsis = sinopsis, link = link, comentario = comentario, puntuacion = puntuacion)
+    director = []
+    genero = []
+    if 'usuario' not in session:
+        return redirect(url_for('peliculas'))
+    if agregacion == 'S':
+        pelicula = {
+            "título": titulo,
+            "director/ra": director,
+            "año": anio,
+            "género": genero,
+            "sinopsis": sinopsis,
+            "link": link,
+            "comentario": comentario,
+            "puntuación": puntuacion
+        }
+        peliculas.append(pelicula)
+    for i in peliculas:
+        director.append(i['director/ra'])
+        genero.append(i['género'])
+    return render_template('agregacion.html', name = usuario(), pelicula = pelicula, director = director, genero = genero)
+@app.route('/edicion/<pelicula>', methods = ['GET', 'POST'])
+def edicion(pelicula):
+    if usuario not in session:
+        return redirect(url_for('index'))
+    if request.method == 'POST':
+        for i in peliculas:
+            if i['título'] == pelicula:
+                if request.form.get('titulo') != '':
+                    i['título'] = request.form.get('titulo')
+                if request.form.get('director') != '':
+                    i['director/ra'] = request.form.get('director')
+                if request.form.get('año') != '':
+                    i['año'] = request.form.get('año')
+                if request.form.get('genero') != '':
+                    i['género'] = request.form.get('genero')
+                if request.form.get('sinopsis') != '':
+                    i['sinopsis'] = request.form.get('sinopsis')
+                if request.form.get('link') != '':
+                    i['link'] = request.form.get('link')
+                if request.form.get('cometario') != '':
+                    opinion = request.form.get('comentario')
+                    comentario = i['comentario']
+                    if type(opinion) == str:
+                        comentario = comentario.split(',')
+                    usuario = ',usuario'
+                    nombre = usuario()
+                    usuario = usuario + nombre
+                    usuario = usuario + ':'
+                    comentario.append(usuario)
+                    comentario.append(opinion)
+                    palabras = "".join(comentario)
+                    i['comentario'] = palabras
+                if request.form.get('puntuacion') != '':
+                    i['puntuación'] = request.form.get('puntuacion')
+    return render_template('edicion.html', nombre = usuario, pelicula = pelicula)
+@app.route('/eliminacion/<pelicula>', methods=['GET', 'POST'])
+def eliminacion(pelicula):
+    if 'usuario' not in session:
+        return redirect(url_for('index'))
+    if request.method == 'POST':
+        for i in peliculas:
+            if i['título'] == pelicula:
+                peliculas.remove(i)
+            return redirect(url_for('peliculas'))
+    return render_template('eliminacion.html', nombre = usuario, pelicula = pelicula)
+@app.route('modificacion_director', methods=['GET', 'POST'])
+def modificacion_director():
+    if usuario not in session:
+        return redirect(url_for('index'))
+    if request.method == 'POST':
+        for i in peliculas:
+            if request.form['director'] == i['director']:
+                i['director'] = request.form['nuevo_director']
+        return redirect(url_for('peliculas'))
+    return render_template('modificacion_director.html', nombre = usuario(), peliculas = peliculas)
+@app.route('modificacion_genero', methods=['GET', 'POST'])
+def modificacion_genero():
+    if usuario not in session:
+        return redirect(url_for('index'))
+    if request.method == 'POST':
+        for i in peliculas:
+            if request.form['genero'] == i['género']:
+                i['género'] = request.form['nuevo_genero']
+        return redirect(url_for('peliculas'))
+    return render_template('modificacion_genero.html', nombre = usuario(), peliculas = peliculas)
 @app.route('/directores')
 def directores():
     return jsonify(directores)
@@ -358,8 +446,8 @@ def ABM_directores():
 @app.route('/ABM_generos')
 def ABM_generos():
     return jsonify(ABM_generos)
-@app.route('/ABM_pusuarios')
-def ABM_peliculas():
+@app.route('/ABM_usuarios')
+def ABM_usuarios():
     return jsonify(ABM_usuarios)
 @app.route('/logout')
 def logout():

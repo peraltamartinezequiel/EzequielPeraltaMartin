@@ -1,0 +1,15 @@
+{% extends index.html %}
+
+{% block content %}
+
+{% for i in peliculas %}
+
+<article>
+    <div id="directores">
+        <p> {{ i ['director/ra']}} </p>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Flask Application</title>
+    <title> COCO+ </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
@@ -26,7 +26,6 @@
             {% for i in peliculas %}
             <article>
                 <div id="peliculas">
-                    <p> {{ i ['id'] }} </p>
                     <h3> {{ i ['título'] }} </h3>
                     <p> {{ i ['director'] }} </p>
                     <p> {{ i ['año'] }} </p>
@@ -34,6 +33,7 @@
                     <p> {{ i ['sinopsis'] }} </p>
                     <p> {{ i ['link'] }} </p>
                     <p> {{ i ['comentario'] }} </p>
+                    <p> {{ i ['puntuación'] }} </p>
                 </div>
             </article>
             {% endfor %}
@@ -53,7 +53,6 @@
             {% for i in peliculas %}
             <article>
                 <div id="pelicula">
-                    <p> {{ i ['id'] }} </p>
                     <h3> {{ i ['título'] }} </h3>
                     <p> {{ i ['director'] }} </p>
                     <p> {{ i ['año'] }} </p>
@@ -61,9 +60,161 @@
                     <p> {{ i ['sinopsis'] }} </p>
                     <p> {{ i ['link'] }} </p>
                     <p> {{ i ['comentario'] }} </p>
+                    <p> {{ i ['puntuación'] }} </p>
                 </div>
             </article>
             {% endfor %}
+            {% endblock %}
+            {% block content %}
+            {% for i in peliculas %}
+            {% if i['director'] == director %}
+            <article>
+                <div id="peliculas">
+                    <h3> {{ i ['título'] }} </h3>
+                    <p> {{ i ['director'] }} </p>
+                    <p> {{ i ['año'] }} </p>
+                    <p> {{ i ['género'] }} </p>
+                    <p> {{ i ['sinopsis'] }} </p>
+                    <p> {{ i ['link'] }} </p>
+                    <p> {{ i ['comentario'] }} </p>
+                    <p> {{ i ['puntuación'] }} </p>
+                </div>
+            </article>
+            {% endfor %}
+            {% endblock %}
+            {% block content %}
+            {% for i in peliculas %}
+            <article>
+                <div id="directores">
+                    <h3> {{ i ['título'] }} </h3>
+                    <p> {{ i ['director/ra']}} </p>
+                </div>
+            </article>
+            {% endfor %}
+            {% endblock %}
+            {% block content %}
+            {% for i in peliculas %}
+            <article>
+                <div id="generos">
+                    <h3> {{ i ['título'] }} </h3>
+                    <p> {{ i ['genero']}} </p>
+                </div>
+            </article>
+            {% endfor %}
+            {% endblock %}
+            {% block content %}
+            <form method="post" action="/agregacion">
+                <div id="id_agregacion">
+                    <h3 id="agregacion"> AGREGAR </h3>
+                    <div id="agregacion">
+                        <label for="titulo"> título: </label>
+                        <input type="text" id="titulo" name="titulo" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="director"> director/ra: </label>
+                        <input type="text" id="director" name="director" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="año"> año: </label>
+                        <input type="number" id="año" name="año" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="genero"> género: </label>
+                        <input type="text" id="genero" name="genero" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="sinopsis"> sinopsis: </label>
+                        <input type="text" id="sinopsis" name="sinopsis" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="link"> link: </label>
+                        <input type="text" id="link" name="link" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="comentario"> comentario: </label>
+                        <input type="text" id="comentario" name="comentario" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="puntacion"> puntuación: </label>
+                        <input type="text" id="puntuacion" name="puntuacion" required />
+                    </div>
+                    <div id="agregacion">
+                        <button type="submit"> ENVIAR </button>
+                    </div>
+                </div>
+            </form>
+            {% endblock %}
+            {% block content %}
+            <form method="post" action="/edicion/{{pelicula}}" id="edicion">
+                <div id="id_agregacion">
+                    <h3 id="agregacion"> AGREGAR </h3>
+                    <div id="agregacion">
+                        <label for="titulo"> título: </label>
+                        <input type="text" id="titulo" name="titulo" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="director"> director/ra: </label>
+                        <input type="text" id="director" name="director" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="año"> año: </label>
+                        <input type="number" id="año" name="año" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="genero"> género: </label>
+                        <input type="text" id="genero" name="genero" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="sinopsis"> sinopsis: </label>
+                        <input type="text" id="sinopsis" name="sinopsis" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="link"> link: </label>
+                        <input type="text" id="link" name="link" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="comentario"> comentario: </label>
+                        <input type="text" id="comentario" name="comentario" required />
+                    </div>
+                    <div id="agregacion">
+                        <label for="puntacion"> puntuación: </label>
+                        <input type="text" id="puntuacion" name="puntuacion" required />
+                    </div>
+                    <div id="agregacion">
+                        <button type="submit"> ENVIAR </button>
+                    </div>
+                </div>
+            </form>
+            {% endblock %}
+            {% block content %}
+            <form action="/eliminacion/{{pelicula}}" method="post" id="boton_eliminacion">
+                <button type="submit" id="boton:eliminacion"> ELIMINAR </button>
+            </form>
+            {% endblock %}
+            {% block content %}
+            <form action="/modificacion_direccion" method="post" id="modificacion">
+                <select nombre="director" id="modificacion_director">
+                    {% for i in peliculas %}
+                    <option> {{ i ['director/ra']}} </option>
+                    {% endfor %}
+                </select>
+                <label for="nuevo_director"> director/ra: </label>
+                <input type="text" id="nuevo_director" name="director" required />
+                <button type="submit" id="modificacion_director"> MODIFICAR </button>
+            </form>
+            {% endblock %}
+            {% extends index.html %}
+            {% block content %}
+            <form action="/modificacion_genero" method="post" id="modificacion">
+                <select nombre="genero" id="modificacion_genero">
+                    {% for i in peliculas %}
+                    <option> {{ i ['género']}} </option>
+                    {% endfor %}
+                </select>
+                <label for="nuevo_genero"> género: </label>
+                <input type="text" id="nuevo_genero" name="genero" required />
+                <button type="submit" id="modificacion_genero"> MODIFICAR </button>
+            </form>
             {% endblock %}
             <div id="botones_pagina">
                 {% if pagina_recurrente > 1 %}
