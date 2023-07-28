@@ -35,9 +35,7 @@
   <ItemGroup>
     <Folder Include="ProyectoFinal\" />
     <Folder Include="ProyectoFinal\static\" />
-    <Folder Include="ProyectoFinal\static\content\" />
-    <Folder Include="ProyectoFinal\static\fonts\" />
-    <Folder Include="ProyectoFinal\static\scripts\" />
+    <Folder Include="ProyectoFinal\static\estilos\" />
     <Folder Include="ProyectoFinal\templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -52,28 +50,9 @@
     <Content Include="ProyectoFinal\templates\modificacion_director.html" />
     <Content Include="ProyectoFinal\templates\modificacion_genero.html" />
     <Content Include="requirements.txt" />
-    <Content Include="ProyectoFinal\static\content\bootstrap.css" />
-    <Content Include="ProyectoFinal\static\content\bootstrap.min.css" />
-    <Content Include="ProyectoFinal\static\content\site.css" />
-    <Content Include="ProyectoFinal\static\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="ProyectoFinal\static\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="ProyectoFinal\static\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="ProyectoFinal\static\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="ProyectoFinal\static\scripts\bootstrap.js" />
-    <Content Include="ProyectoFinal\static\scripts\bootstrap.min.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery-1.10.2.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery-1.10.2.min.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery-1.10.2.min.map" />
-    <Content Include="ProyectoFinal\static\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery.validate.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery.validate.min.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="ProyectoFinal\static\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="ProyectoFinal\static\scripts\modernizr-2.6.2.js" />
-    <Content Include="ProyectoFinal\static\scripts\respond.js" />
-    <Content Include="ProyectoFinal\static\scripts\respond.min.js" />
-    <Content Include="ProyectoFinal\static\scripts\_references.js" />
+    <Content Include="ProyectoFinal\static\estilos\bootstrap.css" />
+    <Content Include="ProyectoFinal\static\estilos\bootstrap.min.css" />
+    <Content Include="ProyectoFinal\static\estilos\site.css" />
     <Content Include="ProyectoFinal\templates\404.html" />
     <Content Include="ProyectoFinal\templates\501.html" />
     <Content Include="ProyectoFinal\templates\login.html" />
