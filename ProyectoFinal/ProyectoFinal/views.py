@@ -394,7 +394,7 @@ def edicion(pelicula):
                     i['comentario'] = palabras
                 if request.form.get('puntuacion') != '':
                     i['puntuación'] = request.form.get('puntuacion')
-    return render_template('edicion.html', nombre = usuario, pelicula = pelicula)
+    return render_template('edicion.html', nombre = usuario(), pelicula = pelicula)
 @app.route('/eliminacion/<pelicula>', methods=['GET', 'POST'])
 def eliminacion(pelicula):
     if 'usuario' not in session:
