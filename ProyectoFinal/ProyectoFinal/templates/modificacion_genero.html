@@ -5,7 +5,7 @@
 <form action="/modificacion_genero" method="post" id="modificacion">
     <select nombre="genero" id="modificacion_genero">
         {% for i in peliculas %}
-        <option> {{ i ['género']}} </option>
+        <option> {{ i ['genero']}} </option>
         {% endfor %}
     </select>
     <label for="nuevo_genero"> género: </label>

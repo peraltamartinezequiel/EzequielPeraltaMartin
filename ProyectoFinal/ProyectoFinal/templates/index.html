@@ -26,14 +26,14 @@
             {% for i in peliculas %}
             <article>
                 <div id="peliculas">
-                    <h3> {{ i ['título'] }} </h3>
+                    <h3> {{ i ['titulo'] }} </h3>
                     <p> {{ i ['director'] }} </p>
-                    <p> {{ i ['año'] }} </p>
-                    <p> {{ i ['género'] }} </p>
+                    <p> {{ i ['anio'] }} </p>
+                    <p> {{ i ['genero'] }} </p>
                     <p> {{ i ['sinopsis'] }} </p>
                     <p> {{ i ['link'] }} </p>
                     <p> {{ i ['comentario'] }} </p>
-                    <p> {{ i ['puntuación'] }} </p>
+                    <p> {{ i ['puntuacion'] }} </p>
                 </div>
             </article>
             {% endfor %}
@@ -42,8 +42,8 @@
             <form action="" method="post">
                 <label for="usuario"> Usuario: </label>
                 <input type="text" id="usuario" name="usuario" required />
-                <label for="contraseña"> Contraseña: </label>
-                <input type="password" id="contraseña" name="contraseña" required />
+                <label for="contrasenia"> Contraseña: </label>
+                <input type="password" id="contrasenia" name="contrasenia" required />
                 <input type="submit" id="send-signin" name="signin" value="ingresar" />
             </form>
             {% endblock %}
@@ -53,14 +53,14 @@
             {% for i in peliculas %}
             <article>
                 <div id="pelicula">
-                    <h3> {{ i ['título'] }} </h3>
+                    <h3> {{ i ['titulo'] }} </h3>
                     <p> {{ i ['director'] }} </p>
-                    <p> {{ i ['año'] }} </p>
+                    <p> {{ i ['anio'] }} </p>
                     <p> {{ i ['género'] }} </p>
                     <p> {{ i ['sinopsis'] }} </p>
                     <p> {{ i ['link'] }} </p>
                     <p> {{ i ['comentario'] }} </p>
-                    <p> {{ i ['puntuación'] }} </p>
+                    <p> {{ i ['puntuacion'] }} </p>
                 </div>
             </article>
             {% endfor %}
@@ -70,14 +70,14 @@
             {% if i['director'] == director %}
             <article>
                 <div id="peliculas">
-                    <h3> {{ i ['título'] }} </h3>
+                    <h3> {{ i ['titulo'] }} </h3>
                     <p> {{ i ['director'] }} </p>
-                    <p> {{ i ['año'] }} </p>
-                    <p> {{ i ['género'] }} </p>
+                    <p> {{ i ['anio'] }} </p>
+                    <p> {{ i ['genero'] }} </p>
                     <p> {{ i ['sinopsis'] }} </p>
                     <p> {{ i ['link'] }} </p>
                     <p> {{ i ['comentario'] }} </p>
-                    <p> {{ i ['puntuación'] }} </p>
+                    <p> {{ i ['puntuacion'] }} </p>
                 </div>
             </article>
             {% endfor %}
@@ -86,8 +86,7 @@
             {% for i in peliculas %}
             <article>
                 <div id="directores">
-                    <h3> {{ i ['título'] }} </h3>
-                    <p> {{ i ['director/ra']}} </p>
+                    <p> {{ i ['director']}} </p>
                 </div>
             </article>
             {% endfor %}
@@ -96,7 +95,6 @@
             {% for i in peliculas %}
             <article>
                 <div id="generos">
-                    <h3> {{ i ['título'] }} </h3>
                     <p> {{ i ['genero']}} </p>
                 </div>
             </article>
@@ -115,8 +113,8 @@
                         <input type="text" id="director" name="director" required />
                     </div>
                     <div id="agregacion">
-                        <label for="año"> año: </label>
-                        <input type="number" id="año" name="año" required />
+                        <label for="anio"> año: </label>
+                        <input type="number" id="anio" name="anio" required />
                     </div>
                     <div id="agregacion">
                         <label for="genero"> género: </label>
@@ -157,8 +155,8 @@
                         <input type="text" id="director" name="director" required />
                     </div>
                     <div id="agregacion">
-                        <label for="año"> año: </label>
-                        <input type="number" id="año" name="año" required />
+                        <label for="anio"> año: </label>
+                        <input type="number" id="anio" name="anio" required />
                     </div>
                     <div id="agregacion">
                         <label for="genero"> género: </label>
@@ -195,7 +193,7 @@
             <form action="/modificacion_direccion" method="post" id="modificacion">
                 <select nombre="director" id="modificacion_director">
                     {% for i in peliculas %}
-                    <option> {{ i ['director/ra']}} </option>
+                    <option> {{ i ['director']}} </option>
                     {% endfor %}
                 </select>
                 <label for="nuevo_director"> director/ra: </label>
@@ -208,7 +206,7 @@
             <form action="/modificacion_genero" method="post" id="modificacion">
                 <select nombre="genero" id="modificacion_genero">
                     {% for i in peliculas %}
-                    <option> {{ i ['género']}} </option>
+                    <option> {{ i ['genero']}} </option>
                     {% endfor %}
                 </select>
                 <label for="nuevo_genero"> género: </label>
