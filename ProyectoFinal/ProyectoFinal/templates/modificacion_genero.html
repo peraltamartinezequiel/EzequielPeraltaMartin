@@ -1,13 +1,13 @@
 {% block content %}
 
 <form action="/modificacion_genero" method="post" id="modificacion">
-    <select nombre="genero" id="modificacion_genero">
+    <select name="Genero" id="modificacion_genero">
         {% for datos in peliculas %}
         <option> {{ datos ['genero']}} </option>
         {% endfor %}
     </select>
     <label for="nuevo_genero"> genero: </label>
-    <input type="text" id="nuevo_genero" name="genero" required />
+    <input type="text" id="nuevo_genero" name="Genero" required />
     <button type="submit" id="modificacion_genero"> MODIFICAR </button>
 </form>
 

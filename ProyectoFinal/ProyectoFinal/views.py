@@ -461,16 +461,17 @@ def edicion(pelicula):
                     comentario = pelicula["comentario"]
                     if type(opinion) == str:
                         comentario = comentario.split(",")
-                    usuario = ",usuario"
+                    user = ",usuario"
                     nombre = usuario()
-                    usuario = usuario + nombre
-                    usuario = usuario + ":"
+                    user = user + nombre
+                    user = user + ":"
                     comentario.append(usuario)
                     comentario.append(opinion)
                     palabras = "".join(comentario)
                     pelicula["comentario"] = palabras
                 if request.form.get('Puntuacion') != '':
                     pelicula["puntuacion"] = request.form.get("Puntuacion")
+        return redirect(url_for("peliculas"))
     return render_template("edicion.html", nombre = usuario(), pelicula = pelicula)
 @app.route("/eliminacion/<pelicula>", methods=["GET", "POST"])
 def eliminacion(pelicula):
