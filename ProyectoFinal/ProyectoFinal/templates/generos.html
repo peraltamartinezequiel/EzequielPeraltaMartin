@@ -1,15 +1,9 @@
-{% extends index.html %}
+{% for datos in peliculas %}
 
-{% block content %}
-
-{% for i in peliculas %}
-
-<article>
-    <div id="generos">
-        <p> {{ i ['genero']}} </p>
-    </div>
-</article>
-
+<h2> GENEROS </h2>
+<ul id="generos">
+    <li> {{ datos ['genero'] }} </li>
+</ul>
 {% endfor %}
 
 {% endblock %}

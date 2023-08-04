@@ -1,14 +1,11 @@
-{% extends index.html %}
-
 {% block content %}
 
-{% for i in peliculas %}
+{% for datos in peliculas %}
 
-<article>
-    <div id="directores">
-        <p> {{ i ['director']}} </p>
-    </div>
-</article>
+<h2> DIRECTORES </h2>
+<ul>
+    <li> {{ datos ['director'] }} </li>
+</ul>
 
 {% endfor %}
 

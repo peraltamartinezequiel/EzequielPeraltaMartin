@@ -1,23 +1,21 @@
-{% extends "index.html" %}
-
 {% block content %}
 
-{% for i in peliculas %}
+{% for datos in peliculas %}
 
 {% if i['director'] == director %}
 
-<article>
-    <div id="peliculas">
-        <h3> {{ i ['titulo'] }} </h3>
-        <p> {{ i ['director'] }} </p>
-        <p> {{ i ['anio'] }} </p>
-        <p> {{ i ['genero'] }} </p>
-        <p> {{ i ['sinopsis'] }} </p>
-        <p> {{ i ['link'] }} </p>
-        <p> {{ i ['comentario'] }} </p>
-        <p> {{ i ['puntuacion'] }} </p>
-    </div>
-</article>
+<div id="pelis">
+    <h3> {{ datos ['titulo'] }} </h3>
+    <p> Director: {{ datos ['director'] }} </p>
+    <p> Anio: {{ datos ['anio'] }} </p>
+    <p> Genero {{ datos ['genero'] }} </p>
+    <p> Sinopsis: {{ datos ['sinopsis'] }} </p>
+    <p> Link {{ datos ['link'] }} </p>
+    <p> Comentario: {{ datos ['comentario'] }} </p>
+    <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
+</div>
+
+{% endif %}
 
 {% endfor %}
 

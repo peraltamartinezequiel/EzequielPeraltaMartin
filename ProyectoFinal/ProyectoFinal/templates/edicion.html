@@ -1,24 +1,22 @@
-{% extends "index.html" %}
-
 {% block content %}
 
 <form method="post" action="/edicion/{{pelicula}}" id="edicion">
     <div id="id_agregacion">
         <h3 id="agregacion"> AGREGAR </h3>
         <div id="agregacion">
-            <label for="titulo"> título: </label>
+            <label for="titulo"> titulo: </label>
             <input type="text" id="titulo" name="titulo" required />
         </div>
         <div id="agregacion">
-            <label for="director"> director/ra: </label>
+            <label for="director"> director: </label>
             <input type="text" id="director" name="director" required />
         </div>
         <div id="agregacion">
-            <label for="anio"> año: </label>
+            <label for="anio"> anio: </label>
             <input type="number" id="anio" name="anio" required />
         </div>
         <div id="agregacion">
-            <label for="genero"> género: </label>
+            <label for="genero"> genero: </label>
             <input type="text" id="genero" name="genero" required />
         </div>
         <div id="agregacion">
@@ -34,7 +32,7 @@
             <input type="text" id="comentario" name="comentario" required />
         </div>
         <div id="agregacion">
-            <label for="puntacion"> puntuación: </label>
+            <label for="puntacion"> puntuacion: </label>
             <input type="text" id="puntuacion" name="puntuacion" required />
         </div>
         <div id="agregacion">

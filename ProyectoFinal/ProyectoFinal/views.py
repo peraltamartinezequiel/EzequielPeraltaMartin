@@ -1,10 +1,10 @@
-import math
+import math 
 from flask import Flask, render_template, request, redirect, url_for, jsonify, session
 
-app = Flask(__name__)
-wsgi_app = app.wsgi_app
+app = Flask(__name__, template_folder="templates")
+app.secret_key = "Ezequiel"
 
-peliculas = [
+pelis = [
     {
         "titulo": "La Sirenita",
         "director": "Rob Marshall",
@@ -182,51 +182,152 @@ direccion = {
             "titulo": "El Buen Dinosaurio",
             "anio": 2015
         }
-    ]  
+    ]
 }
-posters = {
-    "La Sirenita": "https://www.cinemacenter.com.ar/img_movies/2627_img2.jpg",
-    "Rapidos y Furiosos X": "https://www.cinemacenter.com.ar/img_movies/2672_img2.jpg",
-    "Guardianes de la Galaxia 3": "https://www.cinemacenter.com.ar/img_movies/2637_img2.jpg",
-    "La Extorsion": "https://www.cinemacenter.com.ar/img_movies/2645_img2.jpg",
-    "Super Mario Bros": "https://www.cinemacenter.com.ar/img_movies/2561_img2.jpg",
-    "Spiderman: Across the Spiderverse": "https://www.cinemacenter.com.ar/img_movies/2615_img2.jpg",
-    "Transformers: El Despertar de las Bestias": "https://www.cinemacenter.com.ar/img_movies/2607_img2.jpg",
-    "The Flash": "https://www.cinemacenter.com.ar/img_movies/2646_img2.jpg",
-    "Elemental": "https://www.cinemacenter.com.ar/img_movies/2626_img2.jpg",
-    "Boogeyman: Tu Miedo Es Real": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg"
-}
-
-ABM_peliculas = {
-    "La Sirenita": "Bajo",
-    "Rapidos y Furiosos X": "Modificable",
-    "Guardianes de la Galaxia 3": "Alto",
-    "La Extorsion": "Bajo",
-    "Super Mario Bros": "Modificable",
-    "Spiderman: Across the Spiderverse": "Alto",
-    "Transformers: El Despertar de las Bestias": "Modificable",
-    "The Flash": "Alto",
-    "Elemental": "Bajo",
-    "Boogeyman: Tu Miedo Es Real": "Bajo"
-}
-ABM_directores = {
-    "Rob Marshall": "Bajo",
-    "Louis Leterrier": "Bajo",
-    "James Gunn": "Alto",
-    "Martino Zaidelis": "Modificable",
-    "Aaron Horvath": "Modificable",
-    "Steven Caple Jr.": "Modificable",
-    "Andy Muschietti": "Alto",
-    "Peter Sohn": "Modificable",
-}
-ABM_generos = {
-    "ciencia ficciin": "Alto",
-    "accion": "Modificable",
-    "aventuras": "Modificable",
-    "terror": "Modificable",
-    "animacion": "Bajo",
-    "drama": "Modificable"
-}
+posters = [
+    {
+        "titulo": "La Sirenita",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2627_img2.jpg"
+    },
+    {
+        "titulo": "Rapidos y Furiosos X",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2672_img2.jpg"
+    },
+    {
+        "titulo": "Guardianes de la Galaxia 3",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2637_img2.jpg"
+    },
+    {
+        "titulo": "La Extorsion",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2645_img2.jpg"
+    },
+    {
+        "titulo": "Super Mario Bros",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2561_img2.jpg"
+    },
+    {
+        "titulo": "Spiderman: Across the Spiderverse",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2615_img2.jpg"
+    },
+    {
+        "titulo": "Transformers: El Despertar de las Bestias", 
+        "link": "https://www.cinemacenter.com.ar/img_movies/2607_img2.jpg"
+    },
+    {
+        "titulo": "The Flash",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2646_img2.jpg"
+    },
+    {
+        "titulo": "Elemental",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2626_img2.jpg"
+    },
+    {
+        "titulo": "Boogeyman: Tu Miedo Es Real",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg"
+    }
+]
+ABM_peliculas = [
+    {
+        "titulo": "La Sirenita",
+        "ABM": "Bajo" 
+    },
+    {
+        "titulo": "Rapidos y Furiosos X",
+        "ABM": "Modificable" 
+    },
+    {
+        "titulo": "Guardianes de la Galaxia 3",
+        "ABM": "Alto" 
+    },
+    {
+        "titulo": "La Extorsion",
+        "ABM": "Bajo" 
+    },
+    {
+        "titulo": "Super Mario Bros",
+        "ABM": "Modificable" 
+    },
+    {
+        "titulo": "Spiderman: Across the Spiderverse",
+        "ABM": "Alto"
+    },
+    {
+        "titulo": "Transformers: El Despertar de las Bestias",
+        "ABM": "Modificable" 
+    },
+    {
+        "titulo": "The Flash",
+        "ABM": "Alto" 
+    },
+    {
+        "titulo": "Elemental",
+        "ABM": "Bajo" 
+    },
+    {
+        "titulo": "Boogeyman: Tu Miedo Es Real",
+        "ABM": "Bajo"
+    }
+]
+ABM_directores = [
+    {
+        "director": "Rob Marshall",
+        "ABM": "Bajo" 
+    },
+    {
+        "director": "Louis Leterrier",
+        "ABM": "Bajo" 
+    },
+    {
+        "director": "James Gunn",
+        "ABM": "Alto" 
+    },
+    {
+        "director": "Martino Zaidelis",
+        "ABM": "Modificable" 
+    },
+    {
+        "director": "Aaron Horvath",
+        "ABM": "Modificable" 
+    },
+    {
+        "director": "Steven Caple Jr.",
+        "ABM": "Modificable" 
+    },
+    {
+        "director": "Andy Muschietti",
+        "ABM": "Alto" 
+    },
+    {
+        "director": "Peter Sohn",
+        "ABM": "Modificable" 
+    }
+]
+ABM_generos = [
+    {
+        "genero": "ciencia ficcion", 
+        "ABM": "Alto" 
+    },
+    {
+        "genero": "accion",
+        "ABM": "Modificable" 
+    },
+    {
+        "genero": "aventuras",
+        "ABM": "Modificable" 
+    },
+    {
+        "genero": "terror",
+        "ABM": "Modificable" 
+    },
+    {
+        "genero": "animacion",
+        "ABM": "Bajo" 
+    },
+    {
+        "genero": "drama",
+        "ABM": "Modificable" 
+    }
+]
 usuarios = [
     {
         "usuario": "Coco814151",
@@ -241,18 +342,30 @@ usuarios = [
         "contrasenia": "jvk967"
     }
 ]
-ABM_usuarios = {
-    "Coco814151": "Alto",
-    "negrito55fotos": "Alto",
-    "mymartin": "Modificable"
-}
+ABM_usuarios = [
+    {
+        "usuario": "Coco814151",
+        "ABM": "Alto" 
+    },
+    {
+        "usuario": "negrito55fotos",
+        "ABM": "Alto" 
+    },
+    {
+        "usuario": "mymartin",
+        "ABM": "Modificable" 
+    }
+]
 def usuario():
-    return session.get("usuario", "")
+    if "user" in session:
+        nombre = session["user"]
+    else:
+        nombre = ""
+    return nombre
 @app.route("/")
 def index():
     contador = 0
-    peliculas2 = peliculas
-    peliculas2 = list(peliculas2)
+    peliculas2 = list(pelis)
     num_pagina = request.args.get("pagina", 1, type=int)
     por_pagina = 10
     inicio_indice = (num_pagina - 1) * por_pagina
@@ -260,45 +373,48 @@ def index():
     if len(peliculas2) > 1:
         peliculas2.reverse()
     peliculas3 = peliculas2[inicio_indice:fin_indice]
-    total_peliculas = len(peliculas)
+    total_peliculas = len(pelis)
     total_paginas = math.ceil(total_peliculas/por_pagina)
+    if num_pagina < 1 or num_pagina > total_paginas:
+        return render_template("404.html"), 404
     session["contador"] = session.get("contador", 0) + 1
     contador = session["contador"]
-    return render_template("index.html", nombre = usuario(), peliculas = peliculas3, visitas = contador, total_paginas = total_paginas, pagina_recurrente = num_pagina)
+    return render_template("index.html", nombre = usuario(), peliculas = peliculas3, visitas = contador, total_peliculas = total_peliculas, total_paginas = total_paginas, pagina_recurrente = num_pagina)
+@app.route("/ingreso")
+def ingreso():
+    return render_template("login.html", nombre = usuario())
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
-        usuario = request.form["usuario"]
-        contrasenia = request.form["contrasenia"]
-        next = request.args.get("next", None)
-        for i in usuarios:
-            if i["usuario"] == usuario and i["contrasenia"] == contrasenia:
-                session["usuario"] = usuario
-                return redirect(next or url_for("index"))
-        mensaje_error = "Usuario o contrasenia incorrecto."
-        return render_template("login.html", nombre=usuario, mensaje_error=mensaje_error)
-    return render_template("login.html", nombre=usuario)
+        username = request.form["username"]
+        password = request.form["password"]
+        for usuario in usuarios:
+            if usuario["usuario"] == username and usuario["contrasenia"] == password:
+                session["user"] = usuario["usuario"]
+                return redirect(url_for("index"))
+        return incorrecto()
 @app.route("/peliculas")
 def peliculas():
-    return render_template("peliculas.html")
+    return render_template("peliculas.html", peliculas = pelis)
 @app.route("/peliculas/<director>", methods = ["GET", "POST"])
 def pelis_direccion(director):
     peliculas = []
     if request.method == "POST":
-        for i in peliculas:
-            if i["director"] == director:
+        for pelicula in pelis:
+            if pelicula["director"] == director:
                 peliculas.append("pelicula")
-    return render_template("pelis_direccion.html", nombre = usuario(), director = director, peliculas = peliculas)
+    return render_template("pelis_direccion.html", nombre = usuario(), director = director)
 @app.route("/buscador")
 def buscador():
     titulo1 = request.args.get("titulo")
-    resultados = []
-    for pelicula in peliculas:
-        if titulo1.lower() in pelicula["titulo"].lower():
-            resultados.append(pelicula)
-    return render_template("buscador.html", nombre=usuario(), resultados=resultados)
+    for pelicula in pelis:
+        if titulo1 == None:
+            titulo1 = ""
+    return render_template("buscador.html", nombre=usuario(), peliculas = pelis, titulo1 = titulo1)
 @app.route("/agregacion", methods=["GET", "POST"])
 def agregacion():
+    if "user" not in session:
+        return redirect(url_for("index"))
     if request.method == "POST":
         titulo = request.form["Titulo"]
         director = request.form["Director"]
@@ -318,110 +434,117 @@ def agregacion():
             "comentario": comentario,
             "puntuacion": puntuacion
         }
-        peliculas.append(pelicula)
+        pelis.append(pelicula)
         return redirect(url_for("peliculas"))
     return render_template("agregacion.html")
 @app.route("/edicion/<pelicula>", methods = ["GET", "POST"])
 def edicion(pelicula):
-    if usuario not in session:
+    if "user" not in session:
         return redirect(url_for("index"))
     if request.method == 'POST':
-        for i in peliculas:
-            if i["titulo"] == pelicula:
+        for pelicula in pelis:
+            if pelicula["titulo"] == pelicula:
                 if request.form.get('Titulo') != '':
-                    i["titulo"] = request.form.get("Titulo")
+                    pelicula["titulo"] = request.form.get("Titulo")
                 if request.form.get('Director') != '':
-                    i["director"] = request.form.get("Director")
+                    pelicula["director"] = request.form.get("Director")
                 if request.form.get("Anio") != '':
-                    i["anio"] = request.form.get("Anio")
+                    pelicula["anio"] = request.form.get("Anio")
                 if request.form.get("Genero") != "":
-                    i["genero"] = request.form.get("Genero")
+                    pelicula["genero"] = request.form.get("Genero")
                 if request.form.get("Sinopsis") != "":
-                    i["sinopsis"] = request.form.get("Sinopsis")
+                    pelicula["sinopsis"] = request.form.get("Sinopsis")
                 if request.form.get("Link") != "":
-                    i["link"] = request.form.get("Link")
+                    pelicula["link"] = request.form.get("Link")
                 if request.form.get("Cometario") != "":
                     opinion = request.form.get("Comentario")
-                    comentario = i["comentario"]
+                    comentario = pelicula["comentario"]
                     if type(opinion) == str:
                         comentario = comentario.split(",")
                     usuario = ",usuario"
                     nombre = usuario()
-                    user = user + nombre
+                    usuario = usuario + nombre
                     usuario = usuario + ":"
-                    comentario.append(user)
+                    comentario.append(usuario)
                     comentario.append(opinion)
                     palabras = "".join(comentario)
-                    i["comentario"] = palabras
+                    pelicula["comentario"] = palabras
                 if request.form.get('Puntuacion') != '':
-                    i["puntuacion"] = request.form.get("Puntuacion")
+                    pelicula["puntuacion"] = request.form.get("Puntuacion")
     return render_template("edicion.html", nombre = usuario(), pelicula = pelicula)
 @app.route("/eliminacion/<pelicula>", methods=["GET", "POST"])
 def eliminacion(pelicula):
-    if "usuario" not in session:
+    if "user" not in session:
         return redirect(url_for("index"))
     if request.method == "POST":
-        for i in peliculas:
-            if i["titulo"] == pelicula:
-                peliculas.remove(i)
+        for pelicula in pelis:
+            if pelicula["titulo"] == pelicula:
+                pelis.remove(pelicula)
             return redirect(url_for("peliculas"))
     return render_template("eliminacion.html", nombre = usuario(), pelicula = pelicula)
 @app.route("/modificacion_director", methods=["GET", "POST"])
 def modificacion_director():
+    if "user" not in session:
+        return redirect(url_for("index"))
     if request.method == "POST":
-        old_director = request.form["Director"]
-        new_director = request.form["nuevo_director"]
-
-        for pelicula in peliculas:
-            if pelicula["director"] == old_director:
-                pelicula["director"] = new_director
-
+        viejo_director = request.form["Director"]
+        nuevo_director = request.form["nuevo_director"]
+        for pelicula in pelis:
+            if pelicula["director"] == viejo_director:
+                pelicula["director"] = nuevo_director
         return redirect(url_for("peliculas"))
-
-    return render_template("modificacion_director.html", nombre=usuario(), peliculas=peliculas)
+    return render_template("modificacion_director.html", nombre=usuario(), peliculas = pelis)
 @app.route("/modificacion_genero", methods=["GET", "POST"])
 def modificacion_genero():
+    if "user" not in session:
+        return redirect(url_for("index"))
     if request.method == "POST":
-        old_genero = request.form["Genero"]
-        new_genero = request.form["nuevo_genero"]
-        for pelicula in peliculas:
-            if pelicula["genero"] == old_genero:
-                pelicula["genero"] = new_genero
+        viejo_genero = request.form["Genero"]
+        nuevo_genero = request.form["nuevo_genero"]
+        for pelicula in pelis:
+            if pelicula["genero"] == viejo_genero:
+                pelicula["genero"] = nuevo_genero
         return redirect(url_for("peliculas"))
-    return render_template("modificacion_genero.html", nombre=usuario(), peliculas=peliculas)
+    return render_template("modificacion_genero.html", nombre=usuario(), peliculas = pelis)
 @app.route("/directores")
 def directores():
-    return render_template("directores.html", nombre = usuario(), peliculas = peliculas)
+    return render_template("directores.html", peliculas = pelis)
 @app.route("/generos")
 def generos():
-    return render_template("generos.html", nombre = usuario(), peliculas = peliculas)
+   return render_template("generos.html", peliculas = pelis)
 @app.route("/direccion")
-def direccion():
+def devolucion_direccion():
     return jsonify(direccion)
 @app.route("/posters")
-def posters():
+def devolucion_posters():
     return jsonify(posters)
 @app.route("/ABM_peliculas")
-def ABM_peliculas():
+def devolucion_ABM_peliculas():
     return jsonify(ABM_peliculas)
 @app.route("/ABM_directores")
-def ABM_directores():
+def devolucion_ABM_directores():
     return jsonify(ABM_directores)
 @app.route("/ABM_generos")
-def ABM_generos():
+def devolucion_ABM_generos():
     return jsonify(ABM_generos)
+@app.route("/usuarios")
+def devolucion_usuarios():
+    return jsonify(usuarios)
 @app.route("/ABM_usuarios")
-def ABM_usuarios():
+def devolucion_ABM_usuarios():
     return jsonify(ABM_usuarios)
 @app.route("/logout")
 def logout():
-    session.pop("usuario", None)
-    return redirect(url_for("login"))
+    session.pop("user", None)
+    return redirect(url_for("ingreso"))
+@app.errorhandler(400)
+def incorrecto():
+    return render_template("400.html"), 400
 @app.errorhandler(404)
-def noEncontrado(e):
+def noEncontrado():
     return render_template("404.html"), 404
 @app.errorhandler(501)
-def yaExistente(e):
+def yaExistente():
     return render_template("501.html"), 501
 if __name__ == "__main__":
     app.run(debug=True)
