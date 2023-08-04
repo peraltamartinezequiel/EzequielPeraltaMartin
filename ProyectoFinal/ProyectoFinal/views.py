@@ -404,13 +404,27 @@ def pelis_direccion(director):
             if pelicula["director"] == director:
                 peliculas.append("pelicula")
     return render_template("pelis_direccion.html", nombre = usuario(), director = director)
+@app.route("/confirmacion", methods=["GET", "POST"])
+def confirmacion():
+    if request.method == "POST":
+        titulo = request.form.get("Titulo")
+        titulo = titulo.title()
+        lista = []
+        for pelicula in pelis:
+            if titulo == pelicula["titulo"]:
+                lista.append(pelicula["titulo"])
+        if lista != "":
+            titulo = ""
+            for i in lista:
+                titulo = i + titulo
+            return redirect(url_for("buscador", Titulo = titulo))
+        return noEncontrado()
 @app.route("/buscador")
 def buscador():
-    titulo1 = request.args.get("titulo")
-    for pelicula in pelis:
-        if titulo1 == None:
-            titulo1 = ""
-    return render_template("buscador.html", nombre=usuario(), peliculas = pelis, titulo1 = titulo1)
+    titulo1 = request.args.get("Titulo")
+    if titulo1 == None:
+        titulo1 = ""
+    return render_template("buscador.html", nombre = usuario(), peliculas = pelis, titulo1 = titulo1)
 @app.route("/agregacion", methods=["GET", "POST"])
 def agregacion():
     if "user" not in session:
