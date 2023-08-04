@@ -365,18 +365,16 @@ def usuario():
 @app.route("/")
 def index():
     contador = 0
-    peliculas2 = list(pelis)
     num_pagina = request.args.get("pagina", 1, type=int)
     por_pagina = 10
     inicio_indice = (num_pagina - 1) * por_pagina
-    fin_indice = inicio_indice + por_pagina 
+    fin_indice = inicio_indice + por_pagina
+    peliculas2 = list(pelis)
     if len(peliculas2) > 1:
         peliculas2.reverse()
     peliculas3 = peliculas2[inicio_indice:fin_indice]
     total_peliculas = len(pelis)
     total_paginas = math.ceil(total_peliculas/por_pagina)
-    if num_pagina < 1 or num_pagina > total_paginas:
-        return render_template("404.html"), 404
     session["contador"] = session.get("contador", 0) + 1
     contador = session["contador"]
     return render_template("index.html", nombre = usuario(), peliculas = peliculas3, visitas = contador, total_peliculas = total_peliculas, total_paginas = total_paginas, pagina_recurrente = num_pagina)
