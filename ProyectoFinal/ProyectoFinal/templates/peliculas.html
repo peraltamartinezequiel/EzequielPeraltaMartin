@@ -1,14 +1,17 @@
+{% extends "index.html" %}
+
 {% block content %}
 
 {% for datos in peliculas %}
 
 <div id="peliculas">
+    <img src="{{ datos ['link'] }}" width="200" , height="300" />
     <h3> {{ datos ['titulo'] }} </h3>
     <p> Director: {{ datos ['director'] }} </p>
     <p> Anio: {{ datos ['anio'] }} </p>
     <p> Genero {{ datos ['genero'] }} </p>
+    <p> Actores: {{ datos ['actores']}} </p>
     <p> Sinopsis: {{ datos ['sinopsis'] }} </p>
-    <p> Link {{ datos ['link'] }} </p>
     <p> Comentario: {{ datos ['comentario'] }} </p>
     <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
 </div>

@@ -1,42 +1,55 @@
+
 {% block content %}
 
 <form method="post" action="/edicion/{{pelicula}}" id="edicion">
     <div id="id_agregacion">
-        <h3 id="agregacion"> AGREGAR </h3>
+        <h3 id="agregacion"> EDITAR </h3>
         <div id="agregacion">
             <label for="Titulo"> titulo: </label>
-            <input type="text" id="Titulo" name="Titulo" required />
+            <input type="text" id="Titulo" name="Titulo" />
         </div>
         <div id="agregacion">
             <label for="Director"> director: </label>
-            <input type="text" id="Director" name="Director" required />
+            <select name="Director" id="modificacion_director">
+                {% for datos in directores %}
+                <option> {{ datos }} </option>
+                {% endfor %}
+            </select>
         </div>
         <div id="agregacion">
             <label for="Anio"> anio: </label>
-            <input type="number" id="Anio" name="Anio" required />
+            <input type="number" id="Anio" name="Anio" />
         </div>
         <div id="agregacion">
             <label for="Genero"> genero: </label>
-            <input type="text" id="Genero" name="Genero" required />
+            <select name="Genero" id="modificacion_genero">
+                {% for datos in generos %}
+                <option> {{ datos }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="agregacion">
+            <label for="Actores"> actores: </label>
+            <input type="text" id="Actores" name="Actores" />
         </div>
         <div id="agregacion">
             <label for="Sinopsis"> sinopsis: </label>
-            <input type="text" id="Sinopsis" name="Sinopsis" required />
+            <input type="text" id="Sinopsis" name="Sinopsis" />
         </div>
         <div id="agregacion">
             <label for="Link"> link: </label>
-            <input type="text" id="Link" name="Link" required />
+            <input type="text" id="Link" name="Link" />
         </div>
         <div id="agregacion">
             <label for="Comentario"> comentario: </label>
-            <input type="text" id="Comentario" name="Comentario" required />
+            <input type="text" id="Comentario" name="Comentario" />
         </div>
         <div id="agregacion">
-            <label for="Puntacion"> puntuacion: </label>
-            <input type="text" id="Puntuacion" name="Puntuacion" required />
+            <label for="Puntuacion"> puntuacion: </label>
+            <input type="number" id="Puntuacion" name="Puntuacion" min="0" max="10" />
         </div>
         <div id="agregacion">
-            <button type="submit"> ENVIAR </button>
+            <button type="submit"> EDITAR </button>
         </div>
     </div>
 </form>

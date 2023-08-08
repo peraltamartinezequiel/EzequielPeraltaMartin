@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProyectoFinal\templates\peliculas.html" />
-    <Content Include="ProyectoFinal\templates\buscador.html" />
+    <Content Include="ProyectoFinal\templates\buscador_peliculas.html" />
     <Content Include="ProyectoFinal\templates\agregacion.html" />
     <Content Include="ProyectoFinal\templates\edicion.html" />
     <Content Include="ProyectoFinal\templates\eliminacion.html" />
@@ -52,6 +52,9 @@
     <Content Include="ProyectoFinal\templates\modificacion_director.html" />
     <Content Include="ProyectoFinal\templates\modificacion_genero.html" />
     <Content Include="ProyectoFinal\templates\400.html" />
+    <Content Include="ProyectoFinal\templates\buscador_directores.html" />
+    <Content Include="ProyectoFinal\templates\buscador_actores.html" />
+    <Content Include="ProyectoFinal\templates\imagenes.html" />
     <Content Include="requirements.txt" />
     <Content Include="ProyectoFinal\static\estilos\bootstrap.css" />
     <Content Include="ProyectoFinal\static\estilos\bootstrap.min.css" />

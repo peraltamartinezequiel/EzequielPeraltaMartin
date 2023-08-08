@@ -2,10 +2,19 @@
 
 {% block content %}
 
+<nav class="barra_de_navegacion">
+    <div class="contenedor_barra">
+        <form action="/confirmacion_actores" method="post">
+            <div class="flex">
+                <input type="text" id="Actores" name="Actores" />
+                <button class="boton" type="submit"> BUSCAR </button>
+            </div>
+        </form>
+    </div>
+</nav>
+{% if actor1 != "" %}
 {% for datos in peliculas %}
-
-{% if datos['director'] == director %}
-
+{% if datos["actores"] in actor1 %}
 <div id="peliculas">
     <img src="{{ datos ['link'] }}" width="200" , height="300" />
     <h3> {{ datos ['titulo'] }} </h3>
@@ -17,9 +26,7 @@
     <p> Comentario: {{ datos ['comentario'] }} </p>
     <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
 </div>
-
 {% endif %}
-
 {% endfor %}
-
+{% endif %}
 {% endblock %}

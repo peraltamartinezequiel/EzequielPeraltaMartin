@@ -1,13 +1,15 @@
+{% extends "index.html" %}
+
 {% block content %}
 
 <form action="/modificacion_genero" method="post" id="modificacion">
     <select name="Genero" id="modificacion_genero">
         {% for datos in peliculas %}
-        <option> {{ datos ['genero']}} </option>
+        <option> {{ datos }} </option>
         {% endfor %}
     </select>
     <label for="nuevo_genero"> genero: </label>
-    <input type="text" id="nuevo_genero" name="Genero" required />
+    <input type="text" name="nuevo_genero" required />
     <button type="submit" id="modificacion_genero"> MODIFICAR </button>
 </form>
 

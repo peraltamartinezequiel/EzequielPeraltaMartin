@@ -3,36 +3,89 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Catálogo de peliculas </title>
+    <title> COCO+ </title>
 </head>
 <body>
-    <h1>Bienvenido, {{ nombre }}!</h1>
-    <h2>Catalogo de peliculas</h2>
-    {% for datos in peliculas %}
-    <div id="peliculas">
-        <h3> {{ datos ['titulo'] }} </h3>
-        <p> Director: {{ datos ['director'] }} </p>
-        <p> Anio: {{ datos ['anio'] }} </p>
-        <p> Genero {{ datos ['genero'] }} </p>
-        <p> Sinopsis: {{ datos ['sinopsis'] }} </p>
-        <p> Link {{ datos ['link'] }} </p>
-        <p> Comentario: {{ datos ['comentario'] }} </p>
-        <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
-    </div>   
-    {% endfor %}
-    <p>Total de peliculas: {{ total_peliculas }}</p>
-    <p>Total de páginas: {{ total_paginas }}</p>
-    <p>Pagina recurrente: {{ pagina_recurrente }}</p>
-    <p>Numero de visitas: {{ visitas }}</p>
-    <p>Navegacion:</p>
-    <ul>
-        {% if pagina_recurrente > 1 %}
-        <li><a href="/?pagina={{ pagina_recurrente - 1 }}">Pagina previa</a></li>
+    <header>
+        <nav>
+            <hr style="border: white" />
+            <a href="{{ url_for('index') }}"> INICIO </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('buscador_actores') }}"> BUSCAR ACTORES </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('buscador_directores') }}"> BUSCAR DIRECTORES </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('buscador_peliculas') }}"> BUSCAR PELICULAS </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('directores') }}"> LISTA DE DIRECTORES </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('generos') }}"> LISTA DE GENEROS </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('imagenes') }}"> PELICULAS CON IMAGENES REPRESENTATIVAS </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('peliculas') }}"> LISTA DE PELICULAS </a>
+            <hr style="border: white" />
+            {% if nombre != "" %}
+            <a href="{{ url_for('agregacion') }}"> AGREGAR PELICULAS </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('modificacion_director') }}"> MODIFICAR DIRECTOR </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('modificacion_genero') }}"> MODIFICAR GENERO </a>
+            <hr style="border: white" />
+            <a href="{{ url_for('logout') }}"> CERRAR SESION </a>
+            {% endif %}
+        </nav>
+        <hr style="border: white" />
+        {% block content %}
+        <div id="perfil">
+            {% if nombre == "" %}
+            <form action="/login" method="post" id="ingreso">
+                <label for="username"> Usuario: </label>
+                <input type="text" id="username" name="username" required />
+                <label for="password"> Contrasenia: </label>
+                <input type="password" id="password" name="password" required />
+                <button type="submit" id="inicio_sesion" name="inicio_sesion"> INICIAR SESION </button>
+            </form>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        {% if nombre != "" %}
+        <h1>Bienvenido, {{ nombre }}!</h1>
         {% endif %}
-        {% if pagina_recurrente < total_paginas %}
-        <li><a href="/?pagina={{ pagina_recurrente + 1 }}">Siguiente pagina</a></li>
+        <h2>Catalogo de peliculas</h2>
+        {% for datos in peliculas %}
+        <div id="peliculas">
+            <img src="{{ datos ['link'] }}" width="200" , height="300" />
+            <h3> {{ datos ['titulo'] }} </h3>
+            <p> Director: {{ datos ['director'] }} </p>
+            <p> Anio: {{ datos ['anio'] }} </p>
+            <p> Genero {{ datos ['genero'] }} </p>
+            <p> Actores: {{ datos ['actores']}} </p>
+            <p> Sinopsis: {{ datos ['sinopsis'] }} </p>
+            <p> Comentario: {{ datos ['comentario'] }} </p>
+            <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
+        </div>
+        {% endfor %}
+        <p>Total de peliculas: {{ total_peliculas }}</p>
+        <p>Total de páginas: {{ total_paginas }}</p>
+        <p>Pagina recurrente: {{ pagina_recurrente }}</p>
+        <p>Navegacion:</p>
+        <nav>
+            {% if pagina_recurrente > 1 %}
+            <a href="/?pagina={{ pagina_recurrente - 1 }}">Pagina previa</a>
+            {% endif %}
+            {% if pagina_recurrente < total_paginas %}
+            <a href="/?pagina={{ pagina_recurrente + 1 }}">Siguiente pagina</a>
+            {% endif %}
+        </nav>
+    </main>
+    <footer>
+        {% if nombre != "" %}
+        <p> Numero de visitas: {{ visitas }} </p>
         {% endif %}
-    </ul>
+    </footer>
+    {% endblock %}
 </body>
 </html>
 

@@ -1,13 +1,15 @@
+{% extends "index.html" %}
+
 {% block content %}
 
-<form action="/modificacion_direccion" method="post" id="modificacion">
+<form action="/modificacion_director" method="post" id="modificacion">
     <select name="Director" id="modificacion_director">
         {% for datos in peliculas %}
-        <option> {{ datos ['director']}} </option>
+        <option> {{ datos }} </option>
         {% endfor %}
     </select>
     <label for="nuevo_director"> director: </label>
-    <input type="text" id="nuevo_director" name="Director" required />
+    <input type="text" name="nuevo_director" required />
     <button type="submit" id="modificacion_director"> MODIFICAR </button>
 </form>
 
