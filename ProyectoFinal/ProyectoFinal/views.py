@@ -114,6 +114,17 @@ pelis = [
         "link": "https://www.cinemacenter.com.ar/img_movies/2655_img2.jpg",
         "comentario": "",
         "puntuacion": "5"
+    },
+    {
+        "titulo": "Barbie",
+        "director": "Greta Gerwig",
+        "anio": "2023",
+        "genero": "comedia",
+        "actores": "Margot Robbie, Ryan Goslin, Ariana Greenblatt.",
+        "sinopsis": "Una munieca que vive en Barbieland es expulsada al mundo real por no ser lo suficientemente perfecta. Basada en la munieca popular Barbie.",
+        "link": "https://www.cinemacenter.com.ar/img_movies/2616_img2.jpg",
+        "comentario": "",
+        "puntuacion": "7"
     }
 ]
 direccion = {
@@ -553,13 +564,14 @@ def edicion(pelicula):
                     comentario = peli["comentario"]
                     if type(opinion) == str:
                         comentario = comentario.split(",")
-                    user = ",usuario"
+                    user = "usuario, "
                     nombre = usuario()
                     user = user + nombre
-                    user = user + ":"
-                    comentario.append(usuario)
+                    user = user + ": "
+                    comentario.append(user)
                     comentario.append(opinion)
-                    peli["comentario"] = comentario
+                    string = "".join(comentario)
+                    peli["comentario"] = string
                 if request.form.get('Puntuacion') != '':
                     peli["puntuacion"] = request.form.get("Puntuacion")
         return redirect(url_for("peliculas"))

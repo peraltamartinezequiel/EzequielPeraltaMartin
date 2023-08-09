@@ -1,5 +1,3 @@
-{% extends "index.html" %}
-
 {% block content %}
 
 {% for datos in peliculas %}
@@ -7,7 +5,7 @@
 {% if datos['director'] == director %}
 
 <div id="peliculas">
-    <img src="{{ datos ['link'] }}" width="200" , height="300" />
+    <img src="{{ datos ['link'] }}" width="200" height="300" />
     <h3> {{ datos ['titulo'] }} </h3>
     <p> Director: {{ datos ['director'] }} </p>
     <p> Anio: {{ datos ['anio'] }} </p>

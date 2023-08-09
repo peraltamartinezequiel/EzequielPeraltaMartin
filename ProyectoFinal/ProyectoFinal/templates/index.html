@@ -49,6 +49,7 @@
             {% endif %}
         </div>
     </header>
+    <hr style="border: white" />
     <main>
         {% if nombre != "" %}
         <h1>Bienvenido, {{ nombre }}!</h1>
@@ -66,6 +67,18 @@
             <p> Comentario: {{ datos ['comentario'] }} </p>
             <p> Puntuacion: {{ datos ['puntuacion'] }} </p>
         </div>
+        <hr style="border: white" />
+        {% if nombre != "" %}
+        <form action="/edicion/{{ datos ['titulo'] }}">
+            <button type="submit" id="edicion" name="edicion"> EDITAR PELICULA </button>
+        </form>
+        <hr style="border: white" />
+        {% if datos['comentario'] == "" %}
+        <form action="/eliminacion/{{ datos ['titulo'] }}">
+            <button type="submit" id="eliminacion" name="eliminacion"> ELIMINAR PELICULA </button>
+        </form>
+        {% endif %}
+        {% endif %}
         {% endfor %}
         <p>Total de peliculas: {{ total_peliculas }}</p>
         <p>Total de páginas: {{ total_paginas }}</p>
